@@ -21,13 +21,9 @@
 
 ### 1. Clone repository
 
+```markdown
 ```bash
 git clone https://github.com/duythinh04/vistor-studio.git
 cd vistor-studio
 
-👨‍💻 Tác giả
-Nguyễn Duy Thịnh
 
-GitHub: duythinh04
-
-Email: duythinh331@gmail.com
