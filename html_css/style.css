@@ -1,0 +1,87 @@
+.logo-main{
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+  ul li {
+    list-style-type: none; /* Xóa dấu đầu dòng */
+    padding: 0; /* Xóa khoảng cách mặc định */
+    margin: 0; /* Xóa khoảng cách mặc định */
+  }
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+}
+ul.horizontal-list li {
+    display: inline; /* Đặt các phần tử li nằm ngang */
+    margin-right: 20px; /* Khoảng cách giữa các mục */
+}
+.site-header a{
+    text-decoration: none;
+}
+.top-page{
+    padding-top: 60px;
+    padding-left: 5% ;
+    padding-right: 5% ;
+}
+.top-page, top-content{
+    text-align: center;
+}
+.main-page{
+    text-align: center;
+}
+
+/* Style cho div card */
+/* Style cho div card */
+.card {
+  margin-bottom: 1%;
+  position: relative;
+  width: 19%; 
+  height: 200px;
+  overflow: hidden;
+  border: none !important;
+  border-radius: 0px !important;
+}
+
+/* Ảnh trong card */
+.card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s ease, opacity 0.3s ease; /* Thêm hiệu ứng chuyển đổi */
+}
+
+/* Lớp phủ khi hover */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Màu nền xám trong suốt */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Lớp phủ ban đầu không hiển thị */
+  transition: opacity 0.3s ease;
+}
+
+/* Hiển thị chữ */
+.card-text {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Khi hover vào card */
+.card:hover .card-overlay {
+  opacity: 1; /* Lớp phủ sẽ hiển thị hoàn toàn */
+}
+
+.card:hover .card-img-top {
+  filter: blur(4px); /* Làm mờ hình ảnh */
+  opacity: 0.8; /* Giảm độ sáng của hình ảnh khi hover */
+}
