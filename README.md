@@ -25,13 +25,13 @@
 git clone https://github.com/duythinh04/vistor-studio.git
 cd vistor-studio
 
-### 2. Cài đặt và chạy frontend
+#### 2. Cài đặt và chạy frontend
 
 cd frontend
 npm install
 npm start
 
-### 3. Cài đặt và chạy backend
+#### 3. Cài đặt và chạy backend
 
 cd backend
 npm install
