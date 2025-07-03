@@ -41,11 +41,10 @@ npm install
 node server.js
 ``````
 👨‍💻 Tác giả
-Nguyễn Duy Thịnh
 
-GitHub: duythinh04
-
-Email: duythinh331@gmail.com
+- Nguyễn Duy Thịnh
+- GitHub: duythinh04
+- Email: duythinh331@gmail.com
 
 
 
