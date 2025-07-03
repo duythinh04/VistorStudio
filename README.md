@@ -25,15 +25,9 @@
 git clone https://github.com/duythinh04/vistor-studio.git
 cd vistor-studio
 
-2. Cài đặt và chạy frontend
+👨‍💻 Tác giả
+Nguyễn Duy Thịnh
 
-cd frontend
-npm install
-npm start
+GitHub: duythinh04
 
-3. Cài đặt và chạy backend
-
-cd backend
-npm install
-node server.js
-
+Email: duythinh331@gmail.com
