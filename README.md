@@ -21,9 +21,31 @@
 
 ### 1. Clone repository
 
-
 ```bash
 git clone https://github.com/duythinh04/vistor-studio.git
 cd vistor-studio
+``````
+
+### 2. Cài đặt và chạy frontend
+
+```bash
+cd frontend
+npm install
+npm start
+``````
+### 3. Cài đặt và chạy backend
+
+```bash
+cd backend
+npm install
+node server.js
+``````
+👨‍💻 Tác giả
+Nguyễn Duy Thịnh
+
+GitHub: duythinh04
+
+Email: duythinh331@gmail.com
+
 
 
