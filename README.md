@@ -21,7 +21,7 @@
 
 ### 1. Clone repository
 
-```markdown
+
 ```bash
 git clone https://github.com/duythinh04/vistor-studio.git
 cd vistor-studio
