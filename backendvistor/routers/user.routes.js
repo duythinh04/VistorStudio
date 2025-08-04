@@ -1,90 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../models');
-const User = db.User;
-const bcrypt = require('bcryptjs');
+
 const isAdmin = require("../middleware/isAdmin");
 const verifyToken = require('../middleware/verifyToken');
+const userController = require("../controllers/user.controller");
     
-router.get('/',verifyToken,isAdmin,async (req,res)=>{
-    try{
-        const user=await User.findAll(
-            {
-                order:[['id','ASC']],
-                attributes: { exclude: ['password'] }
-            }
-        );
-        res.json(user);
-    }
-    catch(err){
-        res.status(500).json({message: err.message})
-    }
-});
+router.get('/',verifyToken,isAdmin, userController.selectAllUser);
 
-router.post('/',verifyToken,isAdmin, async(req,res)=>{
-    try{
-        const { username,email,password,role } = req.body
+router.post('/',verifyToken,isAdmin, userController.addUser);
 
-            const existingUser = await User.findOne({ where: { email } });
-            if (existingUser) {
-            return res.status(400).json({ message: 'Email already in use' });
-            }
-            const hashedPassword = await bcrypt.hash(password, 10);
-
-        const user = await User.create({
-            username,
-            email,
-            password: hashedPassword,
-            role
-        })
-        res.status(201).json({
-                            id: user.id,
-                            username: user.username,
-                            email: user.email,
-                            role: user.role
-                            });
-    } catch(err){
-        res.status(400).json({message:err.message})
-    }
-});
-
-router.put('/:id',verifyToken,isAdmin, async (req, res) => {
-  try {
-    const edituser = await User.findByPk(req.params.id);
-    if (!edituser) return res.status(404).json({ message: 'User not found' });
-
-    const { username, email, password, role } = req.body;
-
-        const updatedPassword = password 
-        ? await bcrypt.hash(password, 10) 
-        : edituser.password;
-
-    await edituser.update({
-      username,
-      email,
-      password: updatedPassword,
-      role
-    });
-    res.status(201).json({id: edituser.id,
-  username: edituser.username,
-  email: edituser.email,
-  role: edituser.role});;
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-});
+router.put('/:id',verifyToken,isAdmin, userController.editUser);
 
 
-router.delete('/:id',verifyToken,isAdmin, async(req,res)=>{
-    try{
-        const deleteuser=await User.findByPk(req.params.id);
-        if(!deleteuser) return res.status(404).json({message:'Not found'})
-        await deleteuser.destroy()
-        res.json({message:'Delete done'})
-    }
-    catch(err)
-    {
-        res.status(400).json({message:err.message})
-    }
-})
+router.delete('/:id',verifyToken,isAdmin, userController.deleteUser)
 module.exports = router;
